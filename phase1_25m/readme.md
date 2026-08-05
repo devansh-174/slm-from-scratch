@@ -32,27 +32,27 @@ slm-from-scratch/
     │   
     ├── preprocessing/
     │   ├── make_bins.py
-    │   └── make_bins.rmd
+    │   └── make_bins.md
     │
     ├── tokenizer/
     │   ├── tokenizer_analysis.py
-    │   ├── tokenizer_analysis.rmd
+    │   ├── tokenizer_analysis.md
     │   ├── tokenizer_training.py
-    │   ├── tokenizer_training.rmd
+    │   ├── tokenizer_training.md
     │   ├── tokenizer_verify.py
-    │   └── tokenizer_verify.rmd
+    │   └── tokenizer_verify.md
     │
     ├── model/
     │   ├── model.py
-    │   └── model.rmd
+    │   └── model.md
     │
     ├── train/
     │   ├── train.py
-    │   └── train.rmd
+    │   └── train.md
     │
     ├── inference/
     │   ├── inference.py
-    │   └── inference.rmd
+    │   └── inference.md
     │
     └── outputs/
         ├── sample_validation.jsonl
