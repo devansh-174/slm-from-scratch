@@ -1,5 +1,3 @@
-The model is trained on a physics-focused corpus and fine-tuned on physics-specific examples. It is also evaluated on broader mathematics, science, and knowledge benchmarks, including topics beyond its training domain.
-
 ## Model architecture
 
 | Component | Configuration |
@@ -27,7 +25,7 @@ The model uses grouped-query attention (GQA).
 - Tokenizer: SentencePiece Unigram, vocabulary size **11,000** in the reviewed configuration.
 - Recorded tokenizer settings include NFKC normalization, byte fallback, digit splitting, and full character coverage.
 
-## Pipeline
+## Training and evaluation pipeline
 
 1. Train and verify the tokenizer.
 2. Prepare and serialize datasets; create tokenized training and validation binaries.
@@ -38,7 +36,7 @@ The model uses grouped-query attention (GQA).
 
 ## Checkpoints compared
 
-The supplied experiments compare variants named **11.5K** and **14K**.
+The supplied experiments compare checkpoints taken at **11,500** and **14,000 training steps**, referred to as **11.5K** and **14K**, respectively.
 
 ## Results
 
@@ -57,7 +55,6 @@ The supplied experiments compare variants named **11.5K** and **14K**.
 | Micro numeric accuracy | Numeric benchmarks | 3.14% | 3.14% | Tie |
 | Coverage | Evaluated samples | 100% | 100% | Tie |
 
-
 ### Physics evaluation on the held-out test dataset
 
 | Metric | 11.5K | 14K | Higher score |
@@ -71,9 +68,7 @@ The supplied experiments compare variants named **11.5K** and **14K**.
 | Average inference time | 1.107 s | 1.138 s | 11.5K |
 | Average generated tokens | 145.15 | 147.46 | — |
 
-
-### Physics evaluation on generated data from class nusery to class 10 physics
-
+### Physics evaluation on generated data from Class Nursery to Class 10
 
 | Metric | 11.5K | 14K | Higher score |
 |---|---:|---:|---|
@@ -85,12 +80,11 @@ The supplied experiments compare variants named **11.5K** and **14K**.
 | ROUGE-L | 0.1980 | 0.1920 | 11.5K |
 
 
-
 ## Metrics and interpretation
 
 - **Final-answer / numeric accuracy:** correctness under the evaluator's extraction and tolerance rules.
 - **Formula / substitution accuracy:** normalized string comparisons; these do not prove symbolic equivalence or validate the reasoning.
 - **BLEU / ROUGE:** text-overlap metrics, not factual correctness measures.
-- **Coverage:** proportion of benchmark examples evaluated.
+- **Coverage:** proportion of benchmark samples for which an evaluation result was produced.
 - **Latency / token counts:** generation statistics under the reported setup.
 
