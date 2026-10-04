@@ -1,0 +1,2 @@
+- `train_tokenizer2.py` — Prepares the corpus, trains the SentencePiece tokenizer, and validates the dataset.
+- `verify_tokenizer.py` — Independently verifies the trained tokenizer’s configuration and behavior.
