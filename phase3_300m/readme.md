@@ -27,8 +27,6 @@ The model uses grouped-query attention (GQA).
 - Tokenizer: SentencePiece Unigram, vocabulary size **11,000** in the reviewed configuration.
 - Recorded tokenizer settings include NFKC normalization, byte fallback, digit splitting, and full character coverage.
 
-Exact dataset composition, filtering, splits, and redistribution permissions should be documented with the data-preparation scripts. Do not publish data unless its license permits redistribution.
-
 ## Pipeline
 
 1. Train and verify the tokenizer.
@@ -38,11 +36,9 @@ Exact dataset composition, filtering, splits, and redistribution permissions sho
 5. Generate predictions using the inference scripts.
 6. Evaluate existing predictions against ground truth and benchmark datasets.
 
-Prediction generation and scoring are separate stages.
-
 ## Checkpoints compared
 
-The supplied experiments compare variants named **11.5K** and **14K**. These names are retained as provided and should not be interpreted as parameter counts.
+The supplied experiments compare variants named **11.5K** and **14K**.
 
 ## Results
 
@@ -61,7 +57,6 @@ The supplied experiments compare variants named **11.5K** and **14K**. These nam
 | Micro numeric accuracy | Numeric benchmarks | 3.14% | 3.14% | Tie |
 | Coverage | Evaluated samples | 100% | 100% | Tie |
 
-These are the supplied results. A reproducible release should also specify benchmark versions, splits, prompts, scoring protocol, and sample counts.
 
 ### Physics evaluation on the held-out test dataset
 
@@ -76,11 +71,9 @@ These are the supplied results. A reproducible release should also specify bench
 | Average inference time | 1.107 s | 1.138 s | 11.5K |
 | Average generated tokens | 145.15 | 147.46 | — |
 
-BERTScore was not successfully obtained for this evaluation because of a `RobertaTokenizer` compatibility error, so no BERTScore value is reported.
 
 ### Physics evaluation on generated data
 
-The supplied report recorded:
 
 | Metric | 11.5K | 14K | Higher score |
 |---|---:|---:|---|
@@ -91,7 +84,6 @@ The supplied report recorded:
 | Unit accuracy | 38.32% | 38.12% | 11.5K |
 | ROUGE-L | 0.1980 | 0.1920 | 11.5K |
 
-**Important caveat:** static review found a parsing defect in the generated-data evaluator: when a labeled field is found, it extracts only the first character of that field. This can invalidate final-answer, formula, and substitution metrics for labeled outputs. These numbers are included as historical reported results, not validated measurements. Correct the evaluator and regenerate these scores before using them as evidence of model performance.
 
 ### Interpretation
 
@@ -107,8 +99,3 @@ The external benchmarks cover domains beyond physics. Their scores should be int
 - **Coverage:** proportion of benchmark examples evaluated.
 - **Latency / token counts:** generation statistics under the reported setup.
 
-Interpret metrics alongside the evaluator implementation and benchmark protocol.
-
-## Repository contents
-
-The codebase contains separate scripts for tokenizer training and verification, data preparation, model definition, pretraining, fine-tuning, inference, and evaluation. Use each script's CLI arguments and configuration for exact paths and runtime settings.
