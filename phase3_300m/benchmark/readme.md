@@ -1,0 +1,1 @@
+- `benchmark.py` — Generates PhysicsSLM predictions on a benchmark dataset and records token counts and timing metadata; it does not evaluate answer quality.
