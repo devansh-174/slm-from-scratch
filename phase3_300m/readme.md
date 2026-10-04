@@ -1,18 +1,6 @@
-from pathlib import Path
-
-readme = """# Physics Small Language Model (Physics SLM)
-
-A domain-focused, decoder-only Transformer project for physics education. The workflow covers tokenizer preparation, dataset processing, pretraining, supervised fine-tuning, inference, and evaluation.
-
-> **Reproducibility note:** This README summarizes the configuration and results supplied for the project. The scripts were reviewed statically; this does not certify an end-to-end run. Results below are reported results, not independently reproduced measurements.
-
-## Project overview
-
 The model is trained on a physics-focused corpus and fine-tuned on physics-specific examples. It is also evaluated on broader mathematics, science, and knowledge benchmarks, including topics beyond its training domain.
 
 ## Model architecture
-
-The reviewed `model2.py` configuration:
 
 | Component | Configuration |
 |---|---:|
