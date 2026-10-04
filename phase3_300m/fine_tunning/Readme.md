@@ -1,0 +1,1 @@
+- `fine_tunning.py` — Fine-tunes a pretrained PhysicsSLM checkpoint on instruction-formatted JSONL data, masking loss to the answer span; supports validation, checkpointing, resume, and experiment-specific logging.
