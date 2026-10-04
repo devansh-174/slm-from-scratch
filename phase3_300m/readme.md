@@ -72,7 +72,7 @@ The supplied experiments compare variants named **11.5K** and **14K**.
 | Average generated tokens | 145.15 | 147.46 | — |
 
 
-### Physics evaluation on generated data
+### Physics evaluation on generated data from class nusery to class 10 physics
 
 
 | Metric | 11.5K | 14K | Higher score |
@@ -85,11 +85,6 @@ The supplied experiments compare variants named **11.5K** and **14K**.
 | ROUGE-L | 0.1980 | 0.1920 | 11.5K |
 
 
-### Interpretation
-
-In the supplied results, 11.5K has slightly higher final-answer accuracy on both physics evaluations and higher aggregate accuracy on the listed external benchmark suite. The generated-data report shows higher formula and substitution scores for 14K, but those metrics require revalidation because of the evaluator defect.
-
-The external benchmarks cover domains beyond physics. Their scores should be interpreted in light of the model's physics-focused training data.
 
 ## Metrics and interpretation
 
