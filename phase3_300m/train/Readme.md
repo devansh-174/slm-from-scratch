@@ -1,0 +1,1 @@
+- `train.py` — Trains PhysicsSLM on tokenized training data, with validation, checkpointing, and resume support.
